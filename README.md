@@ -1,1 +1,25 @@
-hola
+# APK TO JAVA Source code
+
+Bonus implementation for CS: Mobile development 2018-2 at Universidad de los Andes Bogotá, Colombia
+
+### Requirements
+- JDK > 7.0
+- Python > 3.0
+- Android application (.apk)
+
+### How to use
+
+```
+git clone https://github.com/ca-montenegro/APKToJava/
+cd APKToJava
+##copy and paste the .apk file in this folder.
+python3 main.py [application].apk
+```
+A new folder with the name of the app will be created with the project structure and .class files.
+
+### Jar lib used
+The project was made using the dex2Jar lib available in this [repo](https://github.com/pxb1988/dex2jar)
+
+#### Author
+
+* **[Camilo Montenegro](https://ca-montenegro.github.io/)** - *Software Developer* - [Github profile](https://github.com/ca-montenegro)
