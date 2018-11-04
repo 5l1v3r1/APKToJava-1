@@ -15,6 +15,10 @@ cd APKToJava
 ##copy and paste the .apk file in this folder.
 python3 main.py [application].apk
 ```
+In this repo you can find facebook.apk file, this can be use as an example. 
+```
+python3 main.py facebook.apk
+```
 A new folder with the name of the app will be created with the project structure and .class files.
 
 ### Jar lib used
