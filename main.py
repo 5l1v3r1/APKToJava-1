@@ -31,7 +31,7 @@ def dex2Jar(apk):
         print('--Android app classes are now available in the project folder ./'+file[0])
     elif(get_platform()=='Windows'):
         print('--APK to Jar initiated--')
-        subprocess.call(['./dex2jar-2.0/d2j-dex2jar.bat', apk])
+        subprocess.call(['dex2jar-2.0'+chr(92)+'d2j-dex2jar.bat', apk])
         print('--Jar created. Creating .class Java files')
         file = apk.split('.')
         createFolder('./' + file[0])
