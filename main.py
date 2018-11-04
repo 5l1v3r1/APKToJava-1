@@ -1,3 +1,8 @@
+#
+# Android app APK to Java source code
+# Author: Camilo Montenegro
+# Github: /ca-montenegro
+
 import sys
 import os
 import subprocess
@@ -17,7 +22,8 @@ def get_platform():
 
 
 def dex2Jar(apk):
-    if(get_platform()=='OS X'):
+    plt = get_platform()
+    if(plt=='OS X' or plt=='Linux'):
         print('--Setup d2j_invoke.sh permissions--')
         subprocess.call(['chmod', '+x', './dex2jar-2.0/d2j_invoke.sh'])
         print('--APK to Jar initiated--')
