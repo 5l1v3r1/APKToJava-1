@@ -30,11 +30,9 @@ def dex2Jar(apk):
         subprocess.call(['sh', './dex2jar-2.0/d2j-dex2jar.sh',apk])
         print('--Jar created. Creating .class Java files')
         file = apk.split('.')
-        createFolder('./'+file[0])
         jarFile = file[0] + '-dex2jar.jar'
-        os.chdir('./'+file[0])
-        subprocess.call(['jar','xf','../'+jarFile])
-        print('--Android app classes are now available in the project folder ./'+file[0])
+        subprocess.call(['java','-jar','jd-core-java-1.2.jar',jarFile])
+        print('--Android app java files are now available in the project folder '+ file[0] + '.src')
     elif(get_platform()=='Windows'):
         print('--APK to Jar initiated--')
         subprocess.call(['dex2jar-2.0'+chr(92)+'d2j-dex2jar.bat', apk])
@@ -42,18 +40,9 @@ def dex2Jar(apk):
         file = apk.split('.')
         createFolder('./' + file[0])
         jarFile = file[0] + '-dex2jar.jar'
-        os.chdir('./' + file[0])
-        subprocess.call(['jar', 'xf', '../' + jarFile])
-        print('--Android app classes are now available in the project folder ./' + file[0])
+        subprocess.call(['java','-jar','jd-core-java-1.2.jar',jarFile])
+        print('--Android app java files are now available in the project folder '+ file[0] + '.src')
 
-
-
-def createFolder(directory):
-    try:
-        if not os.path.exists(directory):
-            os.makedirs(directory)
-    except OSError:
-        print('Error: Creating directory. ' + directory)
 
 
 # --setup--
