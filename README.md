@@ -19,10 +19,13 @@ In this repo you can find facebook.apk file, this can be used as an example.
 ```
 python3 main.py facebook.apk
 ```
-A new folder with the name of the app will be created with the project structure and .class files.
+A new folder with the name of the app will be created with the project structure and .java files.
 
 ### Jar lib used
-The project was made using the dex2Jar lib available in this [repo](https://github.com/pxb1988/dex2jar)
+The project was made using:
+- Dex2Jar lib available in this [repo](https://github.com/pxb1988/dex2jar)
+- JD-Core-Java lib available in this [repo](https://github.com/nviennot/jd-core-java)
+
 
 #### Author
 
