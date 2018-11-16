@@ -1,6 +1,11 @@
 # APK TO JAVA Source code
 
-Bonus implementation for CS: Mobile development 2018-2 at Universidad de los Andes Bogotá, Colombia
+Bonus implementation for CS: Mobile development 2018-2 at Universidad de los Andes Bogotá, Colombia.
+This project convert any .APK file to four types of source code: 
+- Dex
+- Smali
+- Jar
+- Java
 
 ### Requirements
 - JDK > 7.0
@@ -19,7 +24,11 @@ In this repo you can find facebook.apk file, this can be used as an example.
 ```
 python3 main.py facebook.apk
 ```
-A new folder with the name of the app will be created with the project structure and .java files.
+The following are the output files and folders:
+- Dex file: [application name].dex
+- Smali directory and project structure: [application name]-smali
+- Jar file: [application-name]-dex2jar.jar
+- Java directory and project structure: [application name]-dex2jar.src
 
 ### Jar lib used
 The project was made using:
