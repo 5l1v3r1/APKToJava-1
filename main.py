@@ -24,15 +24,20 @@ def get_platform():
 def dex2Jar(apk):
     plt = get_platform()
     if(plt=='OS X' or plt=='Linux'):
-        print('--Setup d2j_invoke.sh permissions--')
-        subprocess.call(['chmod', '+x', './dex2jar-2.0/d2j_invoke.sh'])
-        print('--APK to Jar initiated--')
-        subprocess.call(['sh', './dex2jar-2.0/d2j-dex2jar.sh',apk])
-        print('--Jar created. Creating .class Java files')
-        file = apk.split('.')
-        jarFile = file[0] + '-dex2jar.jar'
-        subprocess.call(['java','-jar','jd-core-java-1.2.jar',jarFile])
-        print('--Android app java files are now available in the project folder '+ file[0] + '.src')
+    	file = apk.split('.')
+    	print('--Setup d2j_invoke.sh permissions--')
+    	subprocess.call(['chmod', '+x', './dex2jar-2.0/d2j_invoke.sh'])
+    	print('--APK to dex--')
+    	subprocess.call(['sh',"dex2jar-2.0/d2j-jar2dex.sh", apk])
+    	print('--Dex files generated in',file[0]+'-jar2dex.dex--')
+    	print('--Dex to Smali initiated--')
+    	subprocess.call(['sh', 'dex2jar-2.0/d2j-dex2smali.sh',file[0]+'-jar2dex.dex'])
+    	print('--Converting to JAR files--')
+    	subprocess.call(['sh', 'dex2jar-2.0/d2j-dex2jar.sh',file[0]+'-jar2dex.dex'])
+    	print('--Jar created as ',file[0]+'-jar2dex-dex2jar.jar'+'. Creating .java files')
+    	jarFile = file[0] + '-jar2dex-dex2jar.jar'
+    	subprocess.call(['java','-jar','jd-core-java-1.2.jar',jarFile])
+    	print('--Android app java files are now available in the project folder '+ file[0] + '.src')
     elif(get_platform()=='Windows'):
         print('--APK to Jar initiated--')
         subprocess.call(['dex2jar-2.0'+chr(92)+'d2j-dex2jar.bat', apk])
